@@ -12,7 +12,7 @@ import streamlit as st
 from llama_index.llms.openai import OpenAI
 
 PERSIST_DIR = "./storage"
-openai.api_key = "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"
+openai.api_key = st.secrets.openai_key
 
 
 st.set_page_config(page_title="Chat with instabug chat bot", page_icon="./instabug.png", layout="centered", initial_sidebar_state="auto", menu_items=None)
