@@ -1,14 +1,10 @@
 import os.path
-import openai
-from llama_index.core import (
-    VectorStoreIndex, 
-    SimpleDirectoryReader, 
-    ServiceContext,
-    StorageContext,
-    load_index_from_storage
-)
 
+import openai
 import streamlit as st
+from llama_index.core import (ServiceContext, SimpleDirectoryReader,
+                              StorageContext, VectorStoreIndex,
+                              load_index_from_storage)
 from llama_index.llms.openai import OpenAI
 
 PERSIST_DIR = "./storage"
@@ -19,7 +15,7 @@ st.set_page_config(page_title="Chat with instabug chat bot", page_icon="./instab
 
 st.title("Chat with instabug docs 💬")
 
-st.info("Powered by [Mohamed Sayed](https://www.linkedin.com/in/sirsayed98/)", icon="📃")
+st.info("Powered by [Instabug](https://www.instabug.com/)", icon="📃")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
